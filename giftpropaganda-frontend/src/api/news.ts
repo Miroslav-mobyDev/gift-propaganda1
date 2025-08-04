@@ -6,6 +6,7 @@ const API_CONFIG = {
   LOCAL: 'http://localhost:8000/api/news',
   LOCAL_PROD: 'http://localhost:8001/api/news',
   PROD: 'https://giftpropaganda.onrender.com/api/news',
+  GITHUB_PAGES: 'local', // Используем локальный API для GitHub Pages
   TIMEOUT: 10000,
   RETRY_ATTEMPTS: 3,
   RETRY_DELAY: 1000
@@ -134,6 +135,18 @@ export const fetchNews = async (
 ): Promise<NewsResponse> => {
   try {
     console.log('🔍 Загружаем новости:', { category, page, limit });
+    
+    // Проверяем, находимся ли мы на GitHub Pages
+    if (window.location.hostname.includes('github.io')) {
+      console.log('🌐 Используем локальный API для GitHub Pages');
+      
+      if (window.API) {
+        const result = await window.API.getNews(category, page, limit);
+        console.log('✅ Получены новости через локальный API:', result.data?.length || 0, 'шт.');
+        return result;
+      }
+    }
+    
     console.log('🔍 Текущий API:', currentAPI);
     
     const cacheKey = `news_${category || 'all'}_${page}_${limit}`;
