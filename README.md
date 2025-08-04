@@ -1,16 +1,55 @@
-# 🎁 Gift Propaganda News
+# GiftNews - Новостной агрегатор
 
-Современное приложение для агрегации новостей из Telegram каналов.
+Проект новостного агрегатора с React фронтендом и Python бэкендом.
 
-## 🌐 Живое приложение
+## 🚀 Быстрый деплой на GitHub Pages
 
-**Ваше приложение доступно по адресу:**
-👉 [https://miroslav-mobydev.github.io/gift-propaganda1/](https://miroslav-mobydev.github.io/gift-propaganda1/)
+### Автоматический деплой (рекомендуется)
+1. Сделайте push в ветку `main`:
+   ```bash
+   git add .
+   git commit -m "Update project"
+   git push origin main
+   ```
 
-## 🚀 Быстрый старт
+2. GitHub Actions автоматически задеплоит проект на GitHub Pages
+
+### Ручной деплой
+```bash
+python3 deploy_manual.py
+```
+
+## 📁 Структура проекта
+
+```
+GiftNews-main/
+├── giftpropaganda-frontend/     # React приложение
+├── server/                      # Python бэкенд
+├── .github/workflows/          # GitHub Actions
+├── scripts/                    # Вспомогательные скрипты
+└── README.md                   # Документация
+```
+
+## 🔧 Настройка
+
+### 1. Переменные окружения
+В настройках репозитория (Settings → Secrets and variables → Actions) добавьте:
+- `REACT_APP_API_URL` - URL вашего API сервера
+
+### 2. GitHub Pages
+1. Перейдите в Settings → Pages
+2. Выберите Source: "Deploy from a branch"
+3. Выберите Branch: "gh-pages"
+4. Нажмите Save
+
+## 🌐 Доступ к сайту
+
+После успешного деплоя сайт будет доступен по адресу:
+**https://miroslav-mobydev.github.io/gift-propaganda**
+
+## 🛠️ Локальная разработка
 
 ### Frontend
-
 ```bash
 cd giftpropaganda-frontend
 npm install
@@ -18,87 +57,26 @@ npm start
 ```
 
 ### Backend
-
 ```bash
 cd server
+python3 -m venv venv
+source venv/bin/activate  # На Windows: venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+python3 main.py
 ```
 
-## 🏗️ Архитектура
+## 📚 Документация
 
-### Frontend (React + TypeScript)
+- [Настройка GitHub Pages](GITHUB_PAGES_SETUP.md)
+- [Скрипты деплоя](scripts/)
 
-* **Components**: Переиспользуемые UI компоненты
-* **Hooks**: Бизнес-логика и состояние
-* **API**: Взаимодействие с сервером
-* **Types**: TypeScript типизация
+## 🤝 Вклад в проект
 
-### Backend (FastAPI + SQLAlchemy)
+1. Форкните репозиторий
+2. Создайте ветку для новой функции
+3. Внесите изменения
+4. Создайте Pull Request
 
-* **API**: REST API роутеры
-* **Services**: Бизнес-логика
-* **Parsers**: Парсеры новостей
-* **Models**: Модели данных
+## 📄 Лицензия
 
-## 📁 Структура проекта
-
-```
-├── giftpropaganda-frontend/  # React приложение
-├── server/                   # FastAPI сервер
-├── scripts/                  # Вспомогательные скрипты
-└── migrations/              # Миграции БД
-```
-
-## 🔧 Разработка
-
-### Установка зависимостей
-
-```bash
-# Frontend
-cd giftpropaganda-frontend
-npm install
-
-# Backend
-cd server
-pip install -r requirements.txt
-```
-
-### Запуск в режиме разработки
-
-```bash
-# Frontend (порт 3000)
-cd giftpropaganda-frontend
-npm start
-
-# Backend (порт 8000)
-cd server
-python main.py
-```
-
-## 🚀 Деплой
-
-### GitHub Pages (Frontend)
-
-Приложение автоматически деплоится при push в ветку `main`:
-
-* **URL**: https://miroslav-mobydev.github.io/gift-propaganda1/
-* **GitHub Actions**: `.github/workflows/deploy.yml`
-
-### Ручной деплой
-
-```bash
-cd giftpropaganda-frontend
-npm run deploy
-```
-
-## 📱 Telegram Mini App
-
-Приложение интегрировано с Telegram Web App API для использования в качестве мини-приложения.
-
-## 🛠️ Технологии
-
-* **Frontend**: React, TypeScript, Styled Components
-* **Backend**: FastAPI, SQLAlchemy, PostgreSQL
-* **Парсеры**: RSS, Telegram API
-* **Деплой**: GitHub Pages, GitHub Actions 
+MIT License 
