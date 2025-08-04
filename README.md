@@ -1,10 +1,16 @@
-# Gift Propaganda News
+# 🎁 Gift Propaganda News
 
 Современное приложение для агрегации новостей из Telegram каналов.
+
+## 🌐 Живое приложение
+
+**Ваше приложение доступно по адресу:**
+👉 [https://miroslav-mobydev.github.io/gift-propaganda1/](https://miroslav-mobydev.github.io/gift-propaganda1/)
 
 ## 🚀 Быстрый старт
 
 ### Frontend
+
 ```bash
 cd giftpropaganda-frontend
 npm install
@@ -12,6 +18,7 @@ npm start
 ```
 
 ### Backend
+
 ```bash
 cd server
 pip install -r requirements.txt
@@ -21,16 +28,18 @@ python main.py
 ## 🏗️ Архитектура
 
 ### Frontend (React + TypeScript)
-- **Components**: Переиспользуемые UI компоненты
-- **Hooks**: Бизнес-логика и состояние
-- **API**: Взаимодействие с сервером
-- **Types**: TypeScript типизация
+
+* **Components**: Переиспользуемые UI компоненты
+* **Hooks**: Бизнес-логика и состояние
+* **API**: Взаимодействие с сервером
+* **Types**: TypeScript типизация
 
 ### Backend (FastAPI + SQLAlchemy)
-- **API**: REST API роутеры
-- **Services**: Бизнес-логика
-- **Parsers**: Парсеры новостей
-- **Models**: Модели данных
+
+* **API**: REST API роутеры
+* **Services**: Бизнес-логика
+* **Parsers**: Парсеры новостей
+* **Models**: Модели данных
 
 ## 📁 Структура проекта
 
@@ -44,6 +53,7 @@ python main.py
 ## 🔧 Разработка
 
 ### Установка зависимостей
+
 ```bash
 # Frontend
 cd giftpropaganda-frontend
@@ -55,6 +65,7 @@ pip install -r requirements.txt
 ```
 
 ### Запуск в режиме разработки
+
 ```bash
 # Frontend (порт 3000)
 cd giftpropaganda-frontend
@@ -68,11 +79,14 @@ python main.py
 ## 🚀 Деплой
 
 ### GitHub Pages (Frontend)
+
 Приложение автоматически деплоится при push в ветку `main`:
-- URL: https://rustembekov.github.io/GiftNews/
-- GitHub Actions: `.github/workflows/deploy.yml`
+
+* **URL**: https://miroslav-mobydev.github.io/gift-propaganda1/
+* **GitHub Actions**: `.github/workflows/deploy.yml`
 
 ### Ручной деплой
+
 ```bash
 cd giftpropaganda-frontend
 npm run deploy
@@ -84,7 +98,7 @@ npm run deploy
 
 ## 🛠️ Технологии
 
-- **Frontend**: React, TypeScript, Styled Components
-- **Backend**: FastAPI, SQLAlchemy, PostgreSQL
-- **Парсеры**: RSS, Telegram API
-- **Деплой**: GitHub Pages, GitHub Actions 
+* **Frontend**: React, TypeScript, Styled Components
+* **Backend**: FastAPI, SQLAlchemy, PostgreSQL
+* **Парсеры**: RSS, Telegram API
+* **Деплой**: GitHub Pages, GitHub Actions 
